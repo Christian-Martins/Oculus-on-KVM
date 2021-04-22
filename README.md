@@ -29,7 +29,7 @@ Software:
 
 ### For Intel CPUs
 
-You will need to unbind your `Usb Controller: Intel |...] USB xHCI Host Contoller`. 
+You will need to unbind your `Usb Controller: Intel [...] USB xHCI Host Contoller`. 
 Your can find it with the command in your terminal: `lcpsi`
 Find the ID of your USB Controller and make a .sh with
 ```
