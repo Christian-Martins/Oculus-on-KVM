@@ -29,10 +29,29 @@ Software:
 
 ### For Intel CPUs
 
+You will need to unbind your `Usb Controller: Intel |...] USB xHCI Host Contoller`. 
+Your can find it with the command in your terminal: `lcpsi`
+Find the ID of your USB Controller and make a .sh with
+```
+#!/bin/sh
 
+echo -n "0000:00:14.0" > /sys/bus/pci/drivers/xhci_hcd/unbind # Replace "0000:00:14.0" by your usb controller's ID.
+
+sudo virsh start win10 # Or an another command for starting the VM
+```
+And add your USB controller into the devices of your VM in the Virt-Manager.
+
+Start it, install the Oculus software, set the default sound on the Oculus, an that's it!
+
+If you have any crackling problems, i've solved by not using Scream but using directly the device or using PulseAudio passthrough.
 
 ### For AMD CPUs
 
-
+It's the same that Intel but you need to find your USB Controller..
 
 ### For PCIe USB controllers
+
+It's the same that Intel but you need to find your USB Controller..
+
+
+# Au revoir!
